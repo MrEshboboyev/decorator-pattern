@@ -4,8 +4,8 @@ using DecoratorPattern.Services.Abstraction;
 namespace DecoratorPattern.Services.Decorators;
 
 public class LoggingProductServiceDecorator(
-    ILogger<LoggingProductServiceDecorator> logger,
-    IProductService inner)
+    IProductService inner,
+    ILogger<LoggingProductServiceDecorator> logger)
     : IProductService
 {
     public async Task<Product> GetProduct(int id)
